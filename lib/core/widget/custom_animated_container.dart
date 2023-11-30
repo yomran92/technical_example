@@ -19,6 +19,7 @@ class CustomAnimatedContainer extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final AlignmentGeometry? alignment;
   final List<BoxShadow>? boxShadow;
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -33,7 +34,7 @@ class CustomAnimatedContainer extends StatelessWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(r),
         ),
-        boxShadow:boxShadow,
+        boxShadow: boxShadow,
       ),
       child: Center(child: child),
     );

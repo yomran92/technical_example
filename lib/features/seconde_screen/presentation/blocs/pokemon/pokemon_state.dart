@@ -2,6 +2,7 @@ part of 'pokemon_bloc.dart';
 
 abstract class PokemonState extends Equatable {
   const PokemonState({this.message});
+
   final String? message;
 }
 
@@ -10,7 +11,7 @@ class PokemonInitial extends PokemonState {
   List<Object> get props => [];
 }
 
- abstract class GetPokemonsState extends PokemonState {
+abstract class GetPokemonsState extends PokemonState {
   const GetPokemonsState({String? message}) : super(message: message);
 }
 
@@ -21,6 +22,7 @@ class GetPokemonsLoading extends GetPokemonsState {
 
 class GetPokemonsLoaded extends GetPokemonsState {
   const GetPokemonsLoaded({this.getPokemonsEntity});
+
   final GetPokemonsEntity? getPokemonsEntity;
 
   @override

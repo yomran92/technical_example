@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="14pt" height="18pt" viewBox="0 0 14 18">
-<path transform="matrix(1,0,0,-1,0,18)" d="M1 2C1 .9 1.9 0 3 0H11C12.1 0 13 .9 13 2V14H1V2ZM14 17H10.5L9.5 18H4.5L3.5 17H0V15H14V17Z" fill="#e11e1e"/>
+<svg height="18pt" version="1.1" viewBox="0 0 14 18" width="14pt" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 2C1 .9 1.9 0 3 0H11C12.1 0 13 .9 13 2V14H1V2ZM14 17H10.5L9.5 18H4.5L3.5 17H0V15H14V17Z"
+        fill="#e11e1e"
+        transform="matrix(1,0,0,-1,0,18)" />
 </svg>

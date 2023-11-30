@@ -1,6 +1,6 @@
 import 'dart:async';
 
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,14 +11,12 @@ import 'core/config/theme.dart';
 import 'core/navigation_service.dart';
 import 'core/routing/app_router.dart';
 import 'injection_container.dart';
+
 Future<void> main() async {
   ///Running app scope
   {
     runZonedGuarded(() async {
       WidgetsFlutterBinding.ensureInitialized();
-
-
-
 
       ///UI settings scope
       {
@@ -29,20 +27,17 @@ Future<void> main() async {
         ));
       }
 
-
       initInjection();
-      runApp(HookedBlocConfigProvider(
-        injector: () => sl.get,
-        builderCondition: (state) => state != null, // Global build condition
-        listenerCondition: (state) => state != null, // Global listen condition
-        child:
-
-        App(),
-       ),
+      runApp(
+        HookedBlocConfigProvider(
+          injector: () => sl.get,
+          builderCondition: (state) => state != null, // Global build condition
+          listenerCondition: (state) =>
+              state != null, // Global listen condition
+          child: App(),
+        ),
       );
-    }, (error, stackTrace) {
-
-    });
+    }, (error, stackTrace) {});
   }
 }
 
@@ -51,15 +46,13 @@ AppRouter? appRouter;
 class App extends HookWidget {
   App({Key? key}) : super(key: key);
 
-
   static ThemeData get theme => Theme.of(
-    navigatorKey.currentContext!,
-  );
-
+        navigatorKey.currentContext!,
+      );
 
   static final navigatorKey = GlobalKey<NavigatorState>();
 
-    @override
+  @override
   Widget build(BuildContext context) {
     ///Register app-lifecycle listener
     // useOnAppLifecycleStateChange(appLifecycleListener);
@@ -68,29 +61,21 @@ class App extends HookWidget {
 
     appRouter ??= AppRouter(navigatorKey);
 
-    return  ScreenUtilInit(
-        designSize: const Size(428 ,926),
-        useInheritedMediaQuery: true,
-        builder: (BuildContext context, Widget? child) {
-          return   MaterialApp.router(
-              debugShowCheckedModeBanner:false,
-                routerDelegate: appRouter!.delegate(
-                navigatorObservers: () => [
-                  NavigationService.navigatorObserver,
-
-                ],
-              ),
-
-
-
-
-              routeInformationParser: appRouter!.defaultRouteParser(),
-               theme: appTheme,
-
-
-          );
-        },
-
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      useInheritedMediaQuery: true,
+      builder: (BuildContext context, Widget? child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerDelegate: appRouter!.delegate(
+            navigatorObservers: () => [
+              NavigationService.navigatorObserver,
+            ],
+          ),
+          routeInformationParser: appRouter!.defaultRouteParser(),
+          theme: appTheme,
+        );
+      },
     );
   }
 }

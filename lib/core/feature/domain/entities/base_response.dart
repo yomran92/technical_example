@@ -5,6 +5,7 @@ abstract class BaseEntity<T> {
   String? result;
   dynamic errorDescription;
   int? errorCode;
+
   // String targetUrl;
   // bool success;
   // ErrorModel error;
@@ -20,6 +21,7 @@ abstract class BaseEntity<T> {
   //       parsedJson['__abp']);
   // }
   BaseEntity();
+
   BaseEntity.fromJson(Map<String, dynamic> json) {
     result = json['result'];
     errorDescription = json['error_description'];

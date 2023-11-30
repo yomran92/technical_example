@@ -6,8 +6,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:requests_inspector/requests_inspector.dart';
-
-
 import '../../../../../injection_container.dart';
 import '../../../constants.dart';
 import '../../../exceptions/app_exceptions.dart';
@@ -20,8 +18,9 @@ abstract class RemoteDataSource {
     BaseOptions(
       receiveTimeout: Duration(seconds: 50), // 50 seconds
       connectTimeout: Duration(seconds: 50),
-      sendTimeout: Duration(minutes: 3,),
-
+      sendTimeout: Duration(
+        minutes: 3,
+      ),
     ),
   )..interceptors.addAll([RequestsInspectorInterceptor()]);
 
@@ -29,8 +28,7 @@ abstract class RemoteDataSource {
   Map<String, String> headersRefresh = {};
   static CancelToken _cancelToken = CancelToken();
 
-  RemoteDataSource() {
-   }
+  RemoteDataSource() {}
 
   void initTokenAndHeaders(Map headers) {
     // other headers
@@ -54,12 +52,10 @@ abstract class RemoteDataSource {
     }
   }
 
-
-
   Future<Map<String, dynamic>> get(ParamsModel model) async {
     dynamic responseJson;
     // initTokenAndHeaders(headers);
-     await checkConnectivity();
+    await checkConnectivity();
     final url = model.baseUrl ?? baseUrl;
     if (kDebugMode) {
       AppLogger.log('get request url:${url + model.url.toString()}');
@@ -68,7 +64,7 @@ abstract class RemoteDataSource {
     final response = await dio.get(
       url + model.url.toString(),
       options: Options(
-         responseType: ResponseType.plain,
+        responseType: ResponseType.plain,
       ),
       queryParameters: model.urlParams,
     );
@@ -78,7 +74,6 @@ abstract class RemoteDataSource {
     }
     return responseJson;
   }
-
 
   _returnResponse(Response response) {
     final responseJson =
@@ -126,14 +121,13 @@ abstract class RemoteDataSource {
         throw ServerErrorException(data: responseJson);
       default:
         throw FetchDataException(
-          message:   response.data.toString(),
+          message: response.data.toString(),
         );
     }
   }
 
-
   Future<Map<String, dynamic>> performRequest(ParamsModel model) async {
-     Map<String, dynamic> response;
+    Map<String, dynamic> response;
     try {
       if (kDebugMode) {
         AppLogger.log('api url::: ${model.url}');
@@ -168,7 +162,7 @@ abstract class RemoteDataSource {
     } finally {}
   }
 
- static cancelRequest(){
+  static cancelRequest() {
     _cancelToken.cancel();
     _cancelToken.whenCancel.whenComplete(() => _cancelToken = CancelToken());
   }

@@ -1,20 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+
 import '../../../../core/feature/presentation/base_controller.dart';
 import '../../../../core/navigation_service.dart';
 
 class SplashScreenController extends Controller {
-  SplashScreenController(
-
-      );
-
-
-
+  SplashScreenController();
 
   late Timer _timer;
   static const _countDownDuration = 3;
-   final ValueNotifier<bool> isCountingDownNotifier = ValueNotifier(true);
+  final ValueNotifier<bool> isCountingDownNotifier = ValueNotifier(true);
 
   @override
   void init() {
@@ -27,17 +23,12 @@ class SplashScreenController extends Controller {
 
     _timer = Timer.periodic(
       const Duration(seconds: 3),
-          (_) {
-
+      (_) {
         _timer.cancel();
         isCountingDownNotifier.value = true;
-
-
       },
     );
   }
-
-
 
   // Future<void> listener(
   //     PatientProfileBloc bloc, ProfileState current, BuildContext context) async {
@@ -60,8 +51,7 @@ class SplashScreenController extends Controller {
 
   @override
   void dispose() {
-     _timer.cancel();
+    _timer.cancel();
     super.dispose();
   }
-
- }
+}

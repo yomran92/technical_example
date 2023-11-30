@@ -1,11 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="271pt" height="229pt" viewBox="0 0 271 229">
-<defs>
-<clipPath id="clip_0">
-<path transform="matrix(1,0,0,-1,0,229)" d="M0 229H271V0H0V229Z"/>
-</clipPath>
-<mask id="mask_1">
-<g transform="matrix(1,0,0,.99999997,0,0)">
-<image id="image_2" width="271" height="229" xlink:href="data:image/png;base64,
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="229pt" version="1.1"
+    viewBox="0 0 271 229" width="271pt" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="clip_0">
+            <path d="M0 229H271V0H0V229Z" transform="matrix(1,0,0,-1,0,229)" />
+        </clipPath>
+        <mask id="mask_1">
+            <g transform="matrix(1,0,0,.99999997,0,0)">
+                <image height="229" id="image_2" width="271" xlink:href="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAQ8AAADlCAAAAABo7C2yAAAACXBIWXMAAA7EAAAO
 xAGVKw4bAAAMAUlEQVR4nO2df1AU5xnHd28BtYnRALYSgiDmCgFR8UdRQoWTQWus
 mjFx7JgU6w+CBCziGKEddexophMzidqYGBWLhl+CB6KgoojgD+Rul2n+aNM4kwyt
@@ -71,15 +72,15 @@ o4nSQx5jttreYrYKVaiG1g78SBBpMq3CVCFUWBWwMbN24hoQhX/eDfPD0r4a1Vkm
 uuh7mCHm/6zGVCGa6D1Q7H6bi+n5EPrFEmCoWrrW+ijjJGSUCa0AbhnrjVxMnSo1
 Zg8wVC2XV49QexEKih6zC0yZfFSHu8hCaB/SsQ5TqNLhcMrkYDKECqmADohM72J6
 YIYK2X8HaMh3+cFqL0JJhX92G+aH5WoBJkPol7Z3QQ3Jx3S400RkrN8A0voVoWov
-wieffPLJJ58E9H+fBeejNjBSiwAAAABJRU5ErkJggg=="/>
-</g>
-</mask>
-</defs>
-<g>
-<g clip-path="url(#clip_0)">
-<g mask="url(#mask_1)">
-<g transform="matrix(1,0,0,.99999997,0,0)">
-<image id="image_3" width="271" height="229" xlink:href="data:image/png;base64,
+wieffPLJJ58E9H+fBeejNjBSiwAAAABJRU5ErkJggg==" />
+            </g>
+        </mask>
+    </defs>
+    <g>
+        <g clip-path="url(#clip_0)">
+            <g mask="url(#mask_1)">
+                <g transform="matrix(1,0,0,.99999997,0,0)">
+                    <image height="229" id="image_3" width="271" xlink:href="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAQ8AAADlCAIAAADC5eU5AAAACXBIWXMAAA7EAAAO
 xAGVKw4bAAAVCUlEQVR4nO2dbYxc1XnH94t3vTOzxTUGQ6hUTA0GAwZ77bX3ZWbu
 vevdtXkLbxvhIEKTtlFIpQbaNE1iEINjsImNAYOBBe/Oztx7Z+moFPV7E0uVoqoq
@@ -193,9 +194,9 @@ euoX+dHGZf8R1fMJjGe3p3vRX7sqFr1koBXUXDKN92F64JKB1iEEM6J3DdMT30sm
 UjLs9ANuupxp7WuYOCUbK3akp1RPJzCciASjv0vWQ0YZUjLATtQ1PJmkO47Vr/tG
 I8zINIp+wI/jm+GSdY+hlwy0gDE3Oaa3YHriJ/tGC3hQCfAjBNPaq5C5BEM1DHb6
 ATMrHT8xqnfzZX3jMg/BAHa6xo4nNe9WrtvKBTRfAm5yK618YqyYkO3xug7x4Ukt
-b6ueTAAAAAAAAAAAAAAAQBP4f6s4thrDAxSVAAAAAElFTkSuQmCC"/>
-</g>
-</g>
-</g>
-</g>
+b6ueTAAAAAAAAAAAAAAAQBP4f6s4thrDAxSVAAAAAElFTkSuQmCC" />
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'logger.dart';
 // import 'package:yolo_patient/features/chat/presentation/screens/messages_controller.dart';
 
-
 class AppNavigatorObserver extends AutoRouterObserver {
   @override
   void didPush(Route route, Route? previousRoute) {
@@ -40,6 +39,7 @@ class AppNavigatorObserver extends AutoRouterObserver {
   }
 
   String? _currentRouteName;
+
   set _currentNameRouteSet(String? routeName) {
     _currentRouteName = routeName;
     AppLogger.log("Current route is: $_currentRouteName", LoggingType.info);
@@ -50,6 +50,7 @@ class AppNavigatorObserver extends AutoRouterObserver {
 
   ///
   Route? _currentRoute;
+
   set _currentRouteSet(Route? route) {
     _currentRoute = route;
     AppLogger.log("Current route type is: $_currentRoute", LoggingType.info);
@@ -57,6 +58,4 @@ class AppNavigatorObserver extends AutoRouterObserver {
   }
 
   Route? get currentRoute => _currentRoute;
-
-
 }

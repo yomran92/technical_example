@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import 'package:technical_test/core/config/styles.dart';
 
 class WaitingWidget extends StatefulWidget {
@@ -11,26 +9,19 @@ class WaitingWidget extends StatefulWidget {
 }
 
 class _WaitingWidgetState extends State<WaitingWidget> {
-
-
   @override
   void initState() {
-
     super.initState();
   }
 
   @override
   void dispose() {
-     super.dispose();
+    super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) =>
-      const Center(
-        child: CircularProgressIndicator(
-          color: Styles.colorPrimary,
-        )
-      );
-
-
- }
+  Widget build(BuildContext context) => const Center(
+          child: CircularProgressIndicator(
+        color: Styles.colorPrimary,
+      ));
+}

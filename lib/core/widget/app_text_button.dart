@@ -19,6 +19,7 @@ class AppTextButton extends StatelessWidget {
   final Size? fixedSize;
   final EdgeInsetsGeometry? padding;
   final MaterialTapTargetSize? tapTargetSize;
+
   @override
   Widget build(BuildContext context) {
     return TextButton(

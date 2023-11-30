@@ -1,4 +1,4 @@
- import '../../../exceptions/app_exceptions.dart';
+import '../../../exceptions/app_exceptions.dart';
 import 'base_response.dart';
 
 class ErrorEntity extends BaseEntity {
@@ -26,6 +26,7 @@ class ErrorEntity extends BaseEntity {
     return ErrorEntity(errorMessage: exception.message);
     // errorMessage = exception.message;
   }
+
   factory ErrorEntity.fromException(Exception exception) {
     return ErrorEntity(errorMessage: exception.toString());
     // errorMessage = exception.message;

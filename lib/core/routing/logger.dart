@@ -11,9 +11,12 @@ enum LoggingType {
 
 class AppLogger {
   static bool loggingEnabled = true;
+
   AppLogger._();
+
   static AppLogger? _instance;
   static Logger? _loggerInstance;
+
   static AppLogger get instance {
     if (_instance == null) {
       _instance = AppLogger._();

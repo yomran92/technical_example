@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 /// to fix language direction
 class AppTextWidget extends StatelessWidget {
   const AppTextWidget(this.text,
-      {
-        Key? key,
-        this.style,
-        this.maxLines,
-        this.textDirection,
-        this.overflow,
-        this.textAlign,
-        this.textKey
-      }) : super(key: key);
+      {Key? key,
+      this.style,
+      this.maxLines,
+      this.textDirection,
+      this.overflow,
+      this.textAlign,
+      this.textKey})
+      : super(key: key);
 
   final TextStyle? style;
   final int? maxLines;
@@ -21,10 +20,11 @@ class AppTextWidget extends StatelessWidget {
   final String text;
   final TextAlign? textAlign;
   final Key? textKey;
+
   @override
   Widget build(BuildContext context) {
     return Text(
-      key:textKey,
+      key: textKey,
       text,
       style: style,
       maxLines: maxLines,

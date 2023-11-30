@@ -7,7 +7,6 @@ import 'package:technical_test/core/config/theme.dart';
 
 import '../config/styles.dart';
 
-
 class AppTextTitleDataClass {
   final Widget title;
   final EdgeInsetsGeometry? margin;
@@ -21,7 +20,8 @@ enum AppTextFieldType {
 }
 
 class AppTextField extends HookWidget {
-  const AppTextField({this.name = '',
+  const AppTextField({
+    this.name = '',
     this.focusNode,
     this.textAlignVertical,
     this.textAlign,
@@ -58,8 +58,9 @@ class AppTextField extends HookWidget {
     this.readOnly,
     this.onTap,
     this.valueTransformer,
-  this.editTextKey,
+    this.editTextKey,
   });
+
   final BoxConstraints? constraints;
   final AppTextFieldType type;
   final TextCapitalization? textCapitalization;
@@ -117,8 +118,7 @@ class AppTextField extends HookWidget {
         if (appTextTitle is AppTextTitleDataClass)
           Padding(
             padding: (appTextTitle?.margin) ??
-                EdgeInsetsDirectional.only(start: 25.w,
-                    bottom: 10.h),
+                EdgeInsetsDirectional.only(start: 25.w, bottom: 10.h),
             child: Align(
               alignment: AlignmentDirectional.centerStart,
               child: appTextTitle?.title,
@@ -155,8 +155,7 @@ class AppTextField extends HookWidget {
             focusedBorder: focusedBorder,
             errorBorder: errorBorder,
             contentPadding: contentPadding ??
-                EdgeInsets.symmetric(vertical: 8.h,
-                    horizontal: 20.w),
+                EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
             disabledBorder: disabledBorder,
             suffixIcon: _suffixIcon(obscureTextState),
             suffixIconConstraints: BoxConstraints(
@@ -169,10 +168,8 @@ class AppTextField extends HookWidget {
               minWidth: 20.w,
               maxWidth: 100.w,
             ),
-            hintStyle:appTheme.inputDecorationTheme.hintStyle?.copyWith(
-              color: hintFontColor,
-               height: 2.3.h
-            ),
+            hintStyle: appTheme.inputDecorationTheme.hintStyle
+                ?.copyWith(color: hintFontColor, height: 2.3.h),
             errorText: errorText,
             errorStyle: errorStyle,
           ),
@@ -185,7 +182,7 @@ class AppTextField extends HookWidget {
             onChanged?.call(value);
           },
           onSubmitted: onSubmitted,
-          readOnly:readOnly ?? false,
+          readOnly: readOnly ?? false,
           autofocus: autofocus ?? false,
           onTap: onTap,
           valueTransformer: valueTransformer,
@@ -200,19 +197,18 @@ class AppTextField extends HookWidget {
         return suffixIcon;
       case AppTextFieldType.password:
         return GestureDetector(
-
           onTap: () => obscureText.value = !obscureText.value,
-          child:  Padding(
-              padding: EdgeInsetsDirectional.only(
-                end: 15.w,
-              ),
-              child: Icon(
-                Icons.remove_red_eye_rounded,
-                color: obscureText.value
-                    ? Styles.colorSecondary2
-                    :appTheme.primaryColor,
-              ),
-             ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.only(
+              end: 15.w,
+            ),
+            child: Icon(
+              Icons.remove_red_eye_rounded,
+              color: obscureText.value
+                  ? Styles.colorSecondary2
+                  : appTheme.primaryColor,
+            ),
+          ),
         );
     }
   }

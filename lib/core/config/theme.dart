@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:technical_test/core/config/styles.dart';
 
-
-
 final ThemeData appTheme = ThemeData(
   useMaterial3: true,
   progressIndicatorTheme: const ProgressIndicatorThemeData(
     color: Styles.colorPrimary,
   ),
-   fontFamily: Styles.FontFamily,
+  fontFamily: Styles.FontFamily,
   brightness: Brightness.light,
   primaryColor: Styles.colorPrimary,
   primaryColorLight: Styles.colorPrimary,
@@ -17,7 +15,7 @@ final ThemeData appTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: Styles.colorSecondary,
-       textStyle: TextStyle(
+      textStyle: TextStyle(
           color: Styles.colorSecondary,
           fontWeight: FontWeight.w700,
           fontSize: Styles.fontSize16PX),
@@ -33,7 +31,7 @@ final ThemeData appTheme = ThemeData(
     ),
   ),
   // canvasColor: Color(0xfffafafa),
-   dividerTheme: DividerThemeData(
+  dividerTheme: DividerThemeData(
     color: const Color(0xFFD9D9D9),
     thickness: 1.h,
   ),
@@ -74,13 +72,14 @@ final ThemeData appTheme = ThemeData(
       primary: Styles.colorPrimary,
       secondary: Styles.colorSecondary,
       surface: const Color(0xffc6c4c4),
-       error: const Color(0xFFE91717),
+      error: const Color(0xFFE91717),
       onPrimary: Styles.colorPrimary.withAlpha(56),
       onSecondary: Styles.colorSecondary.withAlpha(56),
       onSurface: const Color(0xffc6c4c4).withAlpha(56),
       onBackground: Styles.FontColorWhite.withAlpha(56),
       onError: const Color(0xFFE91717).withAlpha(56),
-      brightness: Brightness.light, background: Styles.FontColorWhite,
+      brightness: Brightness.light,
+      background: Styles.FontColorWhite,
     ),
   ),
   textTheme: TextTheme(
@@ -257,7 +256,7 @@ final ThemeData appTheme = ThemeData(
       fontStyle: FontStyle.normal,
     ),
     helperStyle: TextStyle(
-       fontSize: Styles.fontSize14PX, // 14 px
+      fontSize: Styles.fontSize14PX, // 14 px
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
@@ -299,7 +298,8 @@ final ThemeData appTheme = ThemeData(
         width: 1,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.all(Radius.circular(Styles.textFieldBorderRadiusValue)),
+      borderRadius:
+          BorderRadius.all(Radius.circular(Styles.textFieldBorderRadiusValue)),
     ),
     focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
@@ -440,7 +440,8 @@ final ThemeData appTheme = ThemeData(
     ),
   ),
   checkboxTheme: CheckboxThemeData(
-    fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+    fillColor:
+        MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
       if (states.contains(MaterialState.disabled)) {
         return null;
       }
@@ -451,7 +452,8 @@ final ThemeData appTheme = ThemeData(
     }),
   ),
   radioTheme: RadioThemeData(
-    fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+    fillColor:
+        MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
       if (states.contains(MaterialState.disabled)) {
         return null;
       }
@@ -462,7 +464,8 @@ final ThemeData appTheme = ThemeData(
     }),
   ),
   switchTheme: SwitchThemeData(
-    thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+    thumbColor:
+        MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
       if (states.contains(MaterialState.disabled)) {
         return null;
       }
@@ -471,7 +474,8 @@ final ThemeData appTheme = ThemeData(
       }
       return null;
     }),
-    trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+    trackColor:
+        MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
       if (states.contains(MaterialState.disabled)) {
         return null;
       }

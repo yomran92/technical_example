@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,8 @@ final barrierColor = Colors.white.withAlpha(50);
 )
 // extend the generated private router
 class AppRouter extends _$AppRouter {
-  AppRouter(GlobalKey<NavigatorState> navigatorKey) : super(navigatorKey: navigatorKey);
+  AppRouter(GlobalKey<NavigatorState> navigatorKey)
+      : super(navigatorKey: navigatorKey);
 
   @override
   RouteType get defaultRouteType => RouteType.material();
@@ -32,12 +34,13 @@ class AppRouter extends _$AppRouter {
   final List<AutoRoute> routes = [
     AutoRoute(page: SplashScreenRoute.page, path: '/'),
     CustomRoute(
-        page: HomeScreenRoute.page, transitionsBuilder: TransitionsBuilders.fadeIn),
-  CustomRoute(
-        page: FirstScreenRoute.page, transitionsBuilder: TransitionsBuilders.fadeIn),
-
-     CustomRoute(
-        page: SecondeScreenRoute.page, transitionsBuilder: TransitionsBuilders.fadeIn),
-
+        page: HomeScreenRoute.page,
+        transitionsBuilder: TransitionsBuilders.fadeIn),
+    CustomRoute(
+        page: FirstScreenRoute.page,
+        transitionsBuilder: TransitionsBuilders.fadeIn),
+    CustomRoute(
+        page: SecondeScreenRoute.page,
+        transitionsBuilder: TransitionsBuilders.fadeIn),
   ];
 }

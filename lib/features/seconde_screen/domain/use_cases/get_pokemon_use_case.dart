@@ -8,13 +8,12 @@ import '../entities/get_pokemons_entity.dart';
 
 class GetPokemonsUseCase extends UseCase<GetPokemonsEntity, GetPokemonsParams> {
   GetPokemonsUseCase(this.repository);
+
   PokemonsRepository repository;
 
   @override
   Future<Either<ErrorEntity, GetPokemonsEntity>> call(
-          GetPokemonsParams params) async
-  {
-    return
-
-      repository.getPokemons(params);}
+      GetPokemonsParams params) async {
+    return repository.getPokemons(params);
+  }
 }

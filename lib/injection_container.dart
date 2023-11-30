@@ -6,21 +6,16 @@ import 'package:technical_test/features/seconde_screen/presentation/blocs/pokemo
 import 'core/navigation_service.dart';
 import 'features/seconde_screen/data/remote/data_sources/pokemons_data_source.dart';
 
-
 final sl = GetIt.instance;
 bool servicesInjected = false;
+
 void initInjection() {
   if (servicesInjected) {
     return;
   }
 
-
-
-
-
   //Bloc
   sl.registerLazySingleton(() => PokemonBloc());
-
 
   // //! use cases
   sl.registerLazySingleton(() => GetPokemonsUseCase(sl()));
@@ -32,7 +27,6 @@ void initInjection() {
   //! data sources
 
   sl.registerLazySingleton(() => PokemonsRemoteDataSource());
-
 
   //!
   servicesInjected = true;

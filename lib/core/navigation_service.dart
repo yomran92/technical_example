@@ -4,9 +4,9 @@ import 'package:technical_test/core/routing/app_navigator_observers.dart';
 import 'package:technical_test/core/routing/app_router.dart';
 import 'package:technical_test/core/routing/logger.dart';
 
-
 class NavigationService {
   final BuildContext _context;
+
   NavigationService._(this._context);
 
   factory NavigationService.of(BuildContext context) {
@@ -25,7 +25,7 @@ class NavigationService {
 
     if (route is SplashScreenRoute) {
       AppLogger.log('Restarting');
-     }
+    }
     router.popUntilRoot();
     // router.popUntil((route) => route.isFirst,);
     await router.replace(

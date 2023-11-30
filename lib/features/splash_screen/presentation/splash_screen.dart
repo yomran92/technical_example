@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:technical_test/core/config/assets.dart';
@@ -12,8 +11,6 @@ import 'package:technical_test/features/splash_screen/presentation/widget/splash
 import '../../../core/feature/presentation/base_controller.dart';
 import '../../../core/navigation_service.dart';
 import '../../../core/routing/app_router.dart';
-
-
 
 @RoutePage()
 class SplashScreen extends HookWidget {
@@ -27,47 +24,28 @@ class SplashScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Controller.getInstance(
-      instance: SplashScreenController(
-
-      ),
+      instance: SplashScreenController(),
     );
 
-     return SafeArea(
+    return SafeArea(
       child: WillPopScope(
         onWillPop: () => Future.value(false),
-           child:
-                  Scaffold(
-                   backgroundColor: Styles.FontColorWhite,
-                      body:
-
-                   Center(child:
-
-    ValueListenableBuilder<bool>(
-    valueListenable: controller.isCountingDownNotifier,
-        builder: (context, value, child) {
-                 if(value){
-                   NavigationService.of(context).clearAllAndPushNamed(
-                       HomeScreenRoute(),
-                   );
-
-
-    }
-                 return AppImage(path: Assets.logoSVG,
-                     type: ImageType.asset);
-
-                   },
-                   ),
-                  )
-
-
-                ),
-        ),
-
+        child: Scaffold(
+            backgroundColor: Styles.FontColorWhite,
+            body: Center(
+              child: ValueListenableBuilder<bool>(
+                valueListenable: controller.isCountingDownNotifier,
+                builder: (context, value, child) {
+                  if (value) {
+                    NavigationService.of(context).clearAllAndPushNamed(
+                      HomeScreenRoute(),
+                    );
+                  }
+                  return AppImage(path: Assets.logoSVG, type: ImageType.asset);
+                },
+              ),
+            )),
+      ),
     );
   }
-
-
-  }
-
-
-
+}

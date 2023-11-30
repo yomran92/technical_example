@@ -5,12 +5,10 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:technical_test/core/widget/waiting_widget.dart';
 
-import '../config/assets.dart';
-
-
-import 'package:flutter_svg/flutter_svg.dart';
+import '../config/assetsdart';
 
 class AppImage extends StatelessWidget {
   final String path;
@@ -66,25 +64,21 @@ class AppImage extends StatelessWidget {
             }
             switch (type) {
               case ImageType.cachedNetwork:
-                if (path.split('.').lastOrNull?.contains('svg') ??
-                    false) {
+                if (path.split('.').lastOrNull?.contains('svg') ?? false) {
                   return SvgPicture.network(
                     path,
-
                     fit: BoxFit.contain,
                   );
                 }
                 return CachedNetworkImage(
                   imageUrl: path,
                   fit: fit,
-                  progressIndicatorBuilder:
-                      (context, url, downloadProgress) =>
-                  loadingWidget ?? const WaitingWidget(),
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      loadingWidget ?? const WaitingWidget(),
                   errorWidget: (context, _, i) => errorWidget!,
                 );
               case ImageType.network:
-                if (path.split('.').lastOrNull?.contains('svg') ??
-                    false) {
+                if (path.split('.').lastOrNull?.contains('svg') ?? false) {
                   return SvgPicture.network(
                     path,
                     // color: Colors.re,
@@ -108,8 +102,7 @@ class AppImage extends StatelessWidget {
                   fit: fit,
                 );
               case ImageType.asset:
-                if (path.split('.').lastOrNull?.contains('svg') ??
-                    false) {
+                if (path.split('.').lastOrNull?.contains('svg') ?? false) {
                   return SvgPicture.asset(
                     path,
                     // placeholderBuilder: (ctx) =>

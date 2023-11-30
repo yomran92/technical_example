@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-
-
 import '../../../../core/exceptions/app_exceptions.dart';
 import '../../../../core/feature/domain/entities/error_entity.dart';
 import '../../domain/entities/get_pokemons_entity.dart';
@@ -22,11 +20,9 @@ class PokemonsRepository extends IPokemonsRepository {
     try {
       final GetPokemonsModel remote = await remoteDataSource.getPokemons(model);
 
-         return Right(remote.toEntity());
-
-    } on NoInternetException catch (e){
-
-        return Left(ErrorEntity.fromAppException(e));
+      return Right(remote.toEntity());
+    } on NoInternetException catch (e) {
+      return Left(ErrorEntity.fromAppException(e));
 
       rethrow;
     } on AppException catch (e) {
@@ -35,5 +31,4 @@ class PokemonsRepository extends IPokemonsRepository {
       return Left(ErrorEntity.fromException(e));
     }
   }
-
 }

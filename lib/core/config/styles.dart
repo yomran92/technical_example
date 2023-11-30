@@ -1,31 +1,24 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Styles {
-   static const Color colorPrimary = Color(0xFF63B2F2);
+  static const Color colorPrimary = Color(0xFF63B2F2);
 
-   static const Color colorSecondary = Color(0xFF2F455C);
+  static const Color colorSecondary = Color(0xFF2F455C);
 
-   static const Color colorSecondary2 = Color(0xFF474747);
-   static const Color colorTextWhite = Color(0xFFFFFFFF);
+  static const Color colorSecondary2 = Color(0xFF474747);
+  static const Color colorTextWhite = Color(0xFFFFFFFF);
 
   /// text field styles
   static BorderRadius textFieldBorderRadius =
       BorderRadius.all(Radius.circular(textFieldBorderRadiusValue));
-  static BorderRadius borderRadius40px =
-      BorderRadius.all(Radius.circular(40));
-  static BorderRadius borderRadius30px =
-      BorderRadius.all(Radius.circular(30));
-  static BorderRadius borderRadius25px =
-      BorderRadius.all(Radius.circular(25));
-  static BorderRadius borderRadius16px =
-      BorderRadius.all(Radius.circular(16));
-  static BorderRadius borderRadius14px =
-      BorderRadius.all(Radius.circular(14));
-  static BorderRadius borderRadius12px =
-      BorderRadius.all(Radius.circular(12));
+  static BorderRadius borderRadius40px = BorderRadius.all(Radius.circular(40));
+  static BorderRadius borderRadius30px = BorderRadius.all(Radius.circular(30));
+  static BorderRadius borderRadius25px = BorderRadius.all(Radius.circular(25));
+  static BorderRadius borderRadius16px = BorderRadius.all(Radius.circular(16));
+  static BorderRadius borderRadius14px = BorderRadius.all(Radius.circular(14));
+  static BorderRadius borderRadius12px = BorderRadius.all(Radius.circular(12));
   static Radius circularBorderRadius30px = (Radius.circular(30));
   static Radius circularBorderRadius25px = (Radius.circular(25));
   static Radius circularBorderRadius20px = (Radius.circular(20));
@@ -36,45 +29,47 @@ class Styles {
   static Radius circularBorderRadius4px = (Radius.circular(4));
 
   static double textFieldBorderRadiusValue = 29.47.r;
-  static double textFieldBorder = 70.r ;
+  static double textFieldBorder = 70.r;
+
   static double textFieldBorderWidth = 1.5;
 
-   static const FontColorWhite = Color(0xFFFFFFFF);
-   static const FontColorGray = Color(0xFFBCBCBC);
-   static const FontColorDarkGray = Color(0xFF8D9595);
-   static const FontColorMidGray = Color(0xFFD9D9D9);
+  static const FontColorWhite = Color(0xFFFFFFFF);
+  static const FontColorGray = Color(0xFFBCBCBC);
+  static const FontColorDarkGray = Color(0xFF8D9595);
+  static const FontColorMidGray = Color(0xFFD9D9D9);
 
-   static const FontColorBlack = Color(0xFF000000);
-   static const FontColorPink = Color(0xFFFB36A0);
-   static const FontColorRed = Color(0xFFFF5151);
-   static const ColorDarkRed = Color(0xFFE11E1E);
-   static const FontColorYellowCalender = Color(0xFFCDD100);
-   static const ColorYellow = Color(0xFFFFDFA0);
-   static const ColorDarkYellow = Color(0xFFC0C48A);
-   static const FontColorNiagara = Color(0xFF0FB0A2);
-   static const FontColorOrange = Color(0xFFE8833B);
-   static const FontColorOrangeLite = Color(0xFFFFA337);
-   static const FontColorYellow = Color(0xFFEAC170);
-   static const appThemeColor = Color(0xFFE3E935);
-   static const FontColorLiteBlack = Color(0xFF707070);
-   static const FontColorLiteBlack2 = Color(0xFF474C4E);
-   static const FontColorLiteBlack3 = Color(0xFF636363);
-   static const FontColorLiteBlack4 = Color(0xFF484D4D);
-   static const FontColorLiteBlack5 = Color(0xFF474747);
-   static const FontColorBlackDark = Color(0xFF000000);
-   static const FontCalendarTodayBlack = Color(0xFF484D4D);
-   static const FontCalendarTrailingBlack = Color(0xFFA0A0A0);
-   static const ColorCalendarPan = Color(0xFFC4C4C4);
-   static const ColorNavyBlue = Color(0xFF1C2B39);
-   static const ColorBrightGray = Color(0xFFEEEEEE);
-   static const liteGrayColor = Color(0xFF6D7276);
-   static const blueDarkColor = Color(0xFF0D47A1);
-   static const bluelightColor = Color(0xFF63B2F2);
+  static const FontColorBlack = Color(0xFF000000);
+  static const FontColorPink = Color(0xFFFB36A0);
+  static const FontColorRed = Color(0xFFFF5151);
+  static const ColorDarkRed = Color(0xFFE11E1E);
+  static const FontColorYellowCalender = Color(0xFFCDD100);
+  static const ColorYellow = Color(0xFFFFDFA0);
+  static const ColorDarkYellow = Color(0xFFC0C48A);
+  static const FontColorNiagara = Color(0xFF0FB0A2);
+  static const FontColorOrange = Color(0xFFE8833B);
+  static const FontColorOrangeLite = Color(0xFFFFA337);
+  static const FontColorYellow = Color(0xFFEAC170);
+  static const appThemeColor = Color(0xFFE3E935);
+  static const FontColorLiteBlack = Color(0xFF707070);
+  static const FontColorLiteBlack2 = Color(0xFF474C4E);
+  static const FontColorLiteBlack3 = Color(0xFF636363);
+  static const FontColorLiteBlack4 = Color(0xFF484D4D);
+  static const FontColorLiteBlack5 = Color(0xFF474747);
+  static const FontColorBlackDark = Color(0xFF000000);
+  static const FontCalendarTodayBlack = Color(0xFF484D4D);
+  static const FontCalendarTrailingBlack = Color(0xFFA0A0A0);
+  static const ColorCalendarPan = Color(0xFFC4C4C4);
+  static const ColorNavyBlue = Color(0xFF1C2B39);
+  static const ColorBrightGray = Color(0xFFEEEEEE);
+  static const liteGrayColor = Color(0xFF6D7276);
+  static const blueDarkColor = Color(0xFF0D47A1);
+  static const bluelightColor = Color(0xFF63B2F2);
 
-   static TextStyle get fontStyle => const TextStyle(fontFamily: 'UniviaPro');
-   static TextStyle get poppinsFontStyle => GoogleFonts.poppins();
+  static TextStyle get fontStyle => const TextStyle(fontFamily: 'UniviaPro');
 
-   static const FontFamily = 'UniviaPro';
+  static TextStyle get poppinsFontStyle => GoogleFonts.poppins();
+
+  static const FontFamily = 'UniviaPro';
 
   //font
   static double get fontSize0 => 80.0.sp; //20
@@ -103,11 +98,11 @@ class Styles {
   /// Equals 8 px
   static double get fontSize7 => 26.0.sp; //8
 
-
-
   // font sizes in dp
-  static double fontSize25PX = 25.sp ;
-  static double fontSize20PX = 20.sp ;
+  static double fontSize25PX = 25.sp;
+
+  static double fontSize20PX = 20.sp;
+
   static double fontSize19PX = 19.sp;
   static double fontSize16PX = 16.sp;
   static double fontSize14PX = 14.sp;
@@ -116,10 +111,6 @@ class Styles {
   static double fontSizeFixed12PX = 12;
   static double fontSize11PX = 11.sp;
   static double fontSize10PX = 10.sp;
-
-
-
-
 }
 
 abstract class CommonSizes {

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -8,17 +7,14 @@ import '../../domain/entities/get_pokemons_entity.dart';
 import '../blocs/pokemon/pokemon_bloc.dart';
 
 class SecondeScreenController extends Controller {
-  SecondeScreenController(
-  {required this.bloc}
-      );
-
-
+  SecondeScreenController({required this.bloc});
 
   GetPokemonsState? state;
 
   final PokemonBloc bloc;
   GetPokemonsEntity? getPokemonsEntity;
-  List<PokemonModel>? results=[];
+  List<PokemonModel>? results = [];
+
   // final IndicatorController indicatorController = IndicatorController();
 
   @override
@@ -26,33 +22,33 @@ class SecondeScreenController extends Controller {
     super.init();
     getData();
   }
-getData(){
-  bloc.add(  GetPokemonsEvent(offset: 0));
-  results!.clear();
 
-}
-getRefresh(){
-results!.clear();
-
-  bloc.add(const GetPokemonsEvent(offset: 0));
-
-}
-  getNextPage(int index){
-    bloc.add(  GetPokemonsEvent(offset:20*index ));
-
+  getData() {
+    bloc.add(GetPokemonsEvent(offset: 0));
+    results!.clear();
   }
+
+  getRefresh() {
+    results!.clear();
+
+    bloc.add(const GetPokemonsEvent(offset: 0));
+  }
+
+  getNextPage(int index) {
+    bloc.add(GetPokemonsEvent(offset: 20 * index));
+  }
+
   @override
   dispose() {
     // bloc.close();
     super.dispose();
   }
 
-  bool enablePullUp=false;
+  bool enablePullUp = false;
 
+  final refreshController = RefreshController();
 
-  final  refreshController = RefreshController();
-
-  void listener(BuildContext context, PokemonState  state) {
+  void listener(BuildContext context, PokemonState state) {
     if (state is GetPokemonsLoaded) {
       getPokemonsEntity = state.getPokemonsEntity;
       if (getPokemonsEntity!.next == null) {
@@ -62,8 +58,7 @@ results!.clear();
       }
       //
       if (getPokemonsEntity!.results != null) {
-        results!.addAll(
-            getPokemonsEntity!.results ?? []);
+        results!.addAll(getPokemonsEntity!.results ?? []);
       }
       if (state is GetPokemonsError) {
         results!.clear();
@@ -72,10 +67,4 @@ results!.clear();
       refreshController.refreshCompleted();
     }
   }
-
-
-
-
-
-
- }
+}

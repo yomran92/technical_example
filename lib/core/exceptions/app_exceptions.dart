@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
-
 class AppException extends Equatable implements Exception {
   const AppException([this.data, this._message = '']);
 
   final String _message;
+
   String get message => _message;
   final dynamic data;
 
@@ -24,7 +24,7 @@ class FetchDataException extends AppException {
 
 class NoInternetException extends AppException {
   NoInternetException({String? message, data})
-      : super(data, message =  "no Internet Connection");
+      : super(data, message = "no Internet Connection");
 }
 
 class NoItemsException extends AppException {

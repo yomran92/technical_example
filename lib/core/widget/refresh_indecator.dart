@@ -3,7 +3,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:technical_test/core/config/styles.dart';
 import 'package:technical_test/core/config/theme.dart';
 
-
 class AppRefreshIndicator extends HookWidget {
   const AppRefreshIndicator({
     super.key,
@@ -22,7 +21,6 @@ class AppRefreshIndicator extends HookWidget {
   Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh: onRefresh,
-
       color: Styles.colorPrimary,
       backgroundColor: appTheme.scaffoldBackgroundColor,
       child: Stack(

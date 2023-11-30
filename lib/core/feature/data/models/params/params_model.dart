@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../../constants.dart';
 
-
 @immutable
 abstract class ParamsModel<BodyModelType extends BaseBodyModel>
     extends Equatable {
@@ -14,6 +13,7 @@ abstract class ParamsModel<BodyModelType extends BaseBodyModel>
 
   /// add additional headers to request here
   final Map<String, String> additionalHeaders = {};
+
   // Map<String, String> get additionalHeaders => _additionalHeaders;
 
   /// type of request : [RequestType.POST] or [RequestType.GET]

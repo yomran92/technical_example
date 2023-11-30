@@ -15,28 +15,23 @@ part 'pokemon_state.dart';
 class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
   PokemonBloc() : super(PokemonInitial()) {
     on<GetPokemonsEvent>(_getPokemonCallback);
-
   }
 
-  Future<FutureOr<void>> _getPokemonCallback(GetPokemonsEvent event,
-      Emitter<PokemonState> emit) async {
+  Future<FutureOr<void>> _getPokemonCallback(
+      GetPokemonsEvent event, Emitter<PokemonState> emit) async {
     emit(GetPokemonsLoading());
-   try{
-    final res = await GetPokemonsUseCase(sl<PokemonsRepository>()).call(
-      GetPokemonsParams(
-          body:GetPokemonsParamsBody(offset: event.offset)));
+    try {
+      final res = await GetPokemonsUseCase(sl<PokemonsRepository>()).call(
+          GetPokemonsParams(body: GetPokemonsParamsBody(offset: event.offset)));
 
-    emit(
-      res.fold(
-            (l) => GetPokemonsError(l.errorMessage),
-            (r) => GetPokemonsLoaded(getPokemonsEntity: r),
-      ),
-    );}
-       catch(e){
-     print(e.toString());
-       }
+      emit(
+        res.fold(
+          (l) => GetPokemonsError(l.errorMessage),
+          (r) => GetPokemonsLoaded(getPokemonsEntity: r),
+        ),
+      );
+    } catch (e) {
+      print(e.toString());
+    }
   }
-
-
-
 }

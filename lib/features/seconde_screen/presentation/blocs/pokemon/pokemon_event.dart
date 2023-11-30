@@ -5,13 +5,10 @@ abstract class PokemonEvent extends Equatable {
 }
 
 class GetPokemonsEvent extends PokemonEvent {
-  const GetPokemonsEvent({required this.offset} );
+  const GetPokemonsEvent({required this.offset});
 
-final int offset;
+  final int offset;
 
   @override
   List<Object?> get props => [];
 }
-
-
-
