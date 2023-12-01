@@ -12,6 +12,7 @@ import '../../../core/config/styles.dart';
 import '../../../core/feature/presentation/base_controller.dart';
 import '../../../core/navigation_service.dart';
 import '../../../core/widget/app_image.dart';
+import '../../../core/widget/error_widget.dart';
 import '../../../core/widget/refresh_indecator.dart';
 import '../../../core/widget/waiting_widget.dart';
 import '../../../injection_container.dart';
@@ -68,12 +69,12 @@ class SecondeScreen extends HookWidget {
                 buildWhen: listenAndBuildWhen,
                 builder: (ctx, state) {
                   if (state is GetPokemonsError) {
-                    return Container();
-                    // AppErrorWidget(
-                    // entity: S.of(context).clinics,
-                    // actionTitle: S.current.retry,
-                    // onAction: controller.getPokemonsEntity,
-                    // );
+                    return
+                    AppErrorWidget(
+                    entity:"seconde screen",
+                    actionTitle: 'restart',
+                    onAction: controller.getRefresh(),
+                    );
                   } else if (controller.getPokemonsEntity == null) {
                     return const Expanded(child: WaitingWidget());
                   } else if (controller.getPokemonsEntity!.results == null) {
@@ -81,38 +82,7 @@ class SecondeScreen extends HookWidget {
                   }
                   return Expanded(
                     child:
-
-                        // AppRefreshIndicator(
-                        //   onRefresh: () async => controller.getData(),
-                        //   loading: state is GetPokemonsLoading,
-                        //   color: appTheme.scaffoldBackgroundColor,
-                        //   child: ListView.separated(
-                        //       padding: EdgeInsets.symmetric(
-                        //         vertical: 15.h,
-                        //         horizontal: 14.w,
-                        //       ),
-                        //       // shrinkWrap: true,
-                        //       itemCount: controller.getPokemonsEntity!.results==null?0
-                        //           :controller.getPokemonsEntity!.results!.length,
-                        //       separatorBuilder: (ctx, index) {
-                        //         return Padding(
-                        //             padding: EdgeInsets.symmetric(horizontal: 15.w),
-                        //             child: Divider(
-                        //               thickness: 1.h,
-                        //               height: 20.h,
-                        //             ));
-                        //       },
-                        //       itemBuilder: (ctx, index) {
-                        //         var item = controller.getPokemonsEntity!.results![index];
-                        //         return
-                        //           PokemonWidget(
-                        //             item,
-                        //
-                        //
-                        //         );
-                        //       }),
-                        // ),
-                        Scrollbar(
+                     Scrollbar(
                       interactive: true,
                       radius: const Radius.circular(10),
                       child: SmartRefresher(

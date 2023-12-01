@@ -55,6 +55,7 @@ class AppTextField extends HookWidget {
     this.contentPadding,
     this.formatters = const [],
     this.autofocus,
+    this.isOutlanedDecoration:false,
     this.readOnly,
     this.onTap,
     this.valueTransformer,
@@ -95,6 +96,7 @@ class AppTextField extends HookWidget {
   final FocusNode? focusNode;
   final bool? autofocus;
   final bool? readOnly;
+  final bool isOutlanedDecoration;
   final VoidCallback? onTap;
   final Key? editTextKey;
 
@@ -147,7 +149,44 @@ class AppTextField extends HookWidget {
           enabled: enabled,
           keyboardType: keyboardType,
           validator: validator,
-          decoration: InputDecoration(
+          decoration:
+
+    isOutlanedDecoration?
+    InputDecoration(
+
+        contentPadding: contentPadding ??
+          EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
+      disabledBorder: disabledBorder,
+      suffixIcon: _suffixIcon(obscureTextState),
+      suffixIconConstraints: BoxConstraints(
+        minWidth: 20.w,
+        maxWidth: 100.w,
+        // minHeight: 48,
+      ),
+      prefixIcon: prefixIcon,
+      prefixIconConstraints: BoxConstraints(
+        minWidth: 20.w,
+        maxWidth: 100.w,
+      ),
+      hintStyle: appTheme.inputDecorationTheme.hintStyle
+          ?.copyWith(color: hintFontColor, height: 2.3.h),
+      errorText: errorText,
+      errorStyle: errorStyle,
+
+    fillColor: fillColor ?? Colors.white,
+    hintText: hint,
+    constraints: constraints,
+    errorBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: Styles.ColorDarkRed),
+    ),
+    enabledBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: Styles.textFileColor),
+    ),
+    focusedBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: Styles.colorPrimary),
+    ),
+    ):
+          InputDecoration(
             fillColor: fillColor ?? Colors.white,
             hintText: hint,
             constraints: constraints,

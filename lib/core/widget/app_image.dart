@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:technical_test/core/widget/waiting_widget.dart';
 
-import '../config/assetsdart';
+import '../config/assets.dart';
 
 class AppImage extends StatelessWidget {
   final String path;

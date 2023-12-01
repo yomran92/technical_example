@@ -64,6 +64,7 @@ class Styles {
   static const liteGrayColor = Color(0xFF6D7276);
   static const blueDarkColor = Color(0xFF0D47A1);
   static const bluelightColor = Color(0xFF63B2F2);
+  static const textFileColor = Color(0xFF8F8989);
 
   static TextStyle get fontStyle => const TextStyle(fontFamily: 'UniviaPro');
 

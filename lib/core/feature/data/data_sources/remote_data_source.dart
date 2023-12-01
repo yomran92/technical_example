@@ -57,10 +57,7 @@ abstract class RemoteDataSource {
     // initTokenAndHeaders(headers);
     await checkConnectivity();
     final url = model.baseUrl ?? baseUrl;
-    if (kDebugMode) {
-      AppLogger.log('get request url:${url + model.url.toString()}');
-      AppLogger.log('get request url params:${model.urlParams}');
-    }
+
     final response = await dio.get(
       url + model.url.toString(),
       options: Options(
