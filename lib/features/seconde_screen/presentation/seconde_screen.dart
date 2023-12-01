@@ -44,15 +44,15 @@ class SecondeScreen extends HookWidget {
           appBar: AppBar(
               backgroundColor: Styles.colorPrimary,
               leading: TextButton(
-                child: AppImage(
-                  path: Assets.backIconSVG,
-                  type: ImageType.asset,
-                ),
                 onPressed: () => NavigationService.of(context).pop(),
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
                   fixedSize: Size(20.w, 25.h),
-                  alignment: AlignmentDirectional.centerStart,
+                  alignment: AlignmentDirectional.center,
+                ),
+                child: AppImage(
+                  path: Assets.backIconSVG,
+                  type: ImageType.asset,
                 ),
               ),
               title: Text("Pokemons",

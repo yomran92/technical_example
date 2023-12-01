@@ -66,11 +66,11 @@ class Styles {
   static const bluelightColor = Color(0xFF63B2F2);
   static const textFileColor = Color(0xFF8F8989);
 
-  static TextStyle get fontStyle => const TextStyle(fontFamily: 'UniviaPro');
+  static TextStyle get fontStyle => const TextStyle(fontFamily: 'Typography');
 
   static TextStyle get poppinsFontStyle => GoogleFonts.poppins();
 
-  static const FontFamily = 'UniviaPro';
+  static const FontFamily = 'Typography';
 
   //font
   static double get fontSize0 => 80.0.sp; //20
