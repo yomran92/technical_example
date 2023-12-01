@@ -23,8 +23,7 @@ class HomeScreen extends HookWidget {
       : super(
           key: key,
         ) {
-    // sl<SplashBloc>().add(SplashInitEvent());
-  }
+   }
 
   final _userInputTextFieldKey = GlobalKey<FormFieldState>();
 
@@ -32,9 +31,7 @@ class HomeScreen extends HookWidget {
   Widget build(BuildContext context) {
     final userInputTextController = useTextEditingController();
 
-    final controller = Controller.getInstance(
-      instance: HomeScreenController(),
-    );
+
 
     return SafeArea(
         child: WillPopScope(
@@ -50,82 +47,100 @@ class HomeScreen extends HookWidget {
               ),
             ),
           ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CommonSizes.v10,
-              AppTextField(
-                validationKey: _userInputTextFieldKey,
-                name: 'user input text field',
-                controller: userInputTextController,
-                type: AppTextFieldType.text,
-                hint: 'user input text field',
+          body: GestureDetector(
+            onTap: (){
+              FocusManager.instance.primaryFocus?.unfocus();
+
+            },
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CommonSizes.v10,
+                  AppTextField(
+                    constraints:BoxConstraints(),
+                    validationKey: _userInputTextFieldKey,
+                    name: 'user input text field',
+                    controller: userInputTextController,
+                    type: AppTextFieldType.text,
+                    hint: 'user input text field',
+                      isOutlanedDecoration:true  ,
+                  ),
+                  CommonSizes.v10,
+                  ValueListenableBuilder(
+                      valueListenable: userInputTextController,
+                      builder: (context, value, child) {
+                        return Center(
+                          child: Text(
+                            userInputTextController.text.isEmpty
+                                ? "Your Name"
+                                : userInputTextController.text,
+                            style: appTheme.textTheme.displayLarge,
+                          ),
+                        );
+                      }),
+                  Expanded(child: Container()),
+                  AppButton(
+                      onTap: () {
+                        FocusManager.instance.primaryFocus?.unfocus();
+
+                        userInputTextController.text = '';
+                      },
+                      content: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AppImage(
+                              path: Assets.clearTextSVG, type: ImageType.asset),
+                          CommonSizes.h10,
+                          Text("clear text",
+                              style: appTheme.textTheme.headlineMedium?.copyWith(
+                                  fontSize: Styles.fontSize13PX,
+                                  color: Styles.ColorDarkRed,
+                                  fontWeight: FontWeight.w400))
+                        ],
+                      )),
+                  CommonSizes.v20,
+                  AppButton(
+                      onTap: () {
+                        FocusManager.instance.primaryFocus?.unfocus();
+
+                        NavigationService.of(context).navigateTo(
+                          FirstScreenRoute(
+                              yourNameText: userInputTextController.text.isEmpty
+                                  ? "Your Name"
+                                  : userInputTextController.text),
+                        );
+                      },
+                      fixedSize: Size(376.w, 57.h),
+                      color: Styles.blueDarkColor,
+                      content: Text("go to first page  ",
+                          style: appTheme.textTheme.titleMedium?.copyWith(
+                              fontSize: Styles.fontSize20PX,
+                              color: Styles.colorTextWhite,
+                              fontWeight: FontWeight.w400))),
+                  CommonSizes.v20,
+                  AppButton(
+                      onTap: () {
+                        FocusManager.instance.primaryFocus?.unfocus();
+
+                        NavigationService.of(context).navigateTo(
+                          SecondeScreenRoute(),
+                        );
+                      },
+                      fixedSize: Size(376.w, 57.h),
+                      color: Styles.bluelightColor,
+                      content: Text("go to  second page",
+                          style: appTheme.textTheme.titleMedium?.copyWith(
+                              fontSize: Styles.fontSize20PX,
+                              color: Styles.colorTextWhite,
+                              fontWeight: FontWeight.w400))),
+                  CommonSizes.v35,
+                ],
               ),
-              CommonSizes.v10,
-              ValueListenableBuilder(
-                  valueListenable: userInputTextController,
-                  builder: (context, value, child) {
-                    return Center(
-                      child: Text(
-                        userInputTextController.text.isEmpty
-                            ? "Your Name"
-                            : userInputTextController.text,
-                        style: appTheme.textTheme.displayLarge,
-                      ),
-                    );
-                  }),
-              Expanded(child: Container()),
-              AppButton(
-                  onTap: () {
-                    userInputTextController.text = '';
-                  },
-                  content: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AppImage(
-                          path: Assets.clearTextSVG, type: ImageType.asset),
-                      Text("clear text",
-                          style: appTheme.textTheme.headlineMedium?.copyWith(
-                              fontSize: Styles.fontSize13PX,
-                              color: Styles.ColorDarkRed,
-                              fontWeight: FontWeight.w400))
-                    ],
-                  )),
-              CommonSizes.v20,
-              AppButton(
-                  onTap: () {
-                    NavigationService.of(context).navigateTo(
-                      FirstScreenRoute(
-                          yourNameText: userInputTextController.text.isEmpty
-                              ? "Your Name"
-                              : userInputTextController.text),
-                    );
-                  },
-                  fixedSize: Size(376.w, 57.h),
-                  color: Styles.blueDarkColor,
-                  content: Text("go to first page  ",
-                      style: appTheme.textTheme.titleMedium?.copyWith(
-                          fontSize: Styles.fontSize20PX,
-                          color: Styles.colorTextWhite,
-                          fontWeight: FontWeight.w400))),
-              CommonSizes.v20,
-              AppButton(
-                  onTap: () {
-                    NavigationService.of(context).navigateTo(
-                      SecondeScreenRoute(),
-                    );
-                  },
-                  fixedSize: Size(376.w, 57.h),
-                  color: Styles.bluelightColor,
-                  content: Text("go to  second page",
-                      style: appTheme.textTheme.titleMedium?.copyWith(
-                          fontSize: Styles.fontSize20PX,
-                          color: Styles.colorTextWhite,
-                          fontWeight: FontWeight.w400))),
-              CommonSizes.v35,
-            ],
+            ),
           )),
     ));
   }
